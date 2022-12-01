@@ -1,0 +1,15 @@
+[Unit]
+Description= This is a service file to help you run node app
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/allen/.volta/bin/node /var/www/src/index.js
+User=allen
+Group=allen
+Restart=on-failure
+RestartSec=10
+SyslogIdentifier=hello_web
+
+[Install]
+WantedBy=multi-user.target
