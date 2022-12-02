@@ -44,16 +44,22 @@ Please watch all videos and finised setting up before you create the new user
    **Note:** You should generate a new SSH key before you create 2 new droplets and copy paste key as public key.
 
    ![](images/newsshkey.png)
+   
 
    ![](images/Create-droplets.png)
+   
 
    ![](images/vpc-droplets.png)
+   
 
    ![](images/vpc-done.png)
+   
 
    ![](images/load-balancer.png)
+   
 
 3. Follow the second video and create Firewall
+
    ![](images/firewall1.png)
 
    ![](images/firewall2.png)
@@ -73,6 +79,7 @@ ssh -i ~/.ssh/keyname root@IPAddress
 ```
 
 ![](images/newuser1.png)
+
 ![](images/newuser2.png)
 
 2. Create new user add user to the sudo group and set password do the command below:
@@ -108,6 +115,7 @@ ssh -i ~/.ssh/keyname username@IPAddress
 ```
 
 ![](images/newuser5.png)
+
 ![](images/newuser6.png)
 
 ## Step 3: Install Web server(Caddy) to both droplets
@@ -156,19 +164,24 @@ sudo cp caddy /usr/bin/
 
 ## Step 4 Write you own "web app"
 
+
 1. Create a new directory on your local machine (WSL for the windows people) 2420-assign-two might be a good name for this directory.
 
 ![](images/webapp1.png)
+
 
 2. Inside of this directory create 2 new directories html and src.
 
 ![](images/webapp2.png)
 
+
 3. Inside of the html directory create an index.html page
 
 ![](images/webapp3.png)
 
+
 **note** create a simple but complete html document (include a doctype, head, body… all the stuff an html document should have).
+
 
 4. Inside of the `src` directory create a new node project using volta do the follwowing command:
 
@@ -188,9 +201,11 @@ npm install fastify
 
 ![](images/webapp7.png)
 
+
 5. create a `index.js` file
 
 ![](images/webapp8.png)
+
 
 6. You can try to run and test it, open a new terminal.
 
@@ -198,7 +213,9 @@ npm install fastify
 
 ![](images/webapp10.png)
 
+
 7. Using sftp transfer your files to both droplets using command:
+
    i: To connect to remote server, run command:
 
 ```
@@ -242,6 +259,7 @@ check
 1. Go back to you local machine(WSL), create Caddyfile
 
 ![](images/caddyconf1.png)
+
 ![](images/caddyconf2.png)
 
 2. Again using sftp transfer your file to both droplets make sure the path is correct
@@ -253,11 +271,13 @@ check
 ![](images/mvcaddyfile3.png)
 
 3. In both your droplets, move the `Caddyfile` to the `/etc/caddy` directory.
+
    ![](images/caddyetc1.png)
 
    ![](images/caddyetc2.png)
 
    ![](images/caddyetc3.png)
+   
 
 ## Step 6 installing node and npm with Volta for both of your droplets.
 
@@ -279,12 +299,15 @@ volta install npm
 1. Go back to WSL create a caddy.service file first
 
 ![](images/caddyservice1.png)
+
 ![](images/caddyservice2.png)
 
 2. Using sftp transfer caddy.service file to both droplets make sure is in `/etc/systemd/system/` which all service files should be
 
 ![](images/mvcaddyservice.png)
+
 ![](images/mvcaddyservice1.png)
+
 ![](images/mvcaddyservice2.png)
 
 3. In both your droplets, start and enable the Caddy service.
@@ -300,15 +323,21 @@ sudo systemctl status caddy
 ![](images/startcaddyservice.png)
 
 4. Go back to WSL create node service file `hello_web.service` in same folfer.
+
    ![](images/nodeservice.png)
+   
    ![](images/nodeservice2.png)
 
 5. Using sftp transfer node service file
+
    ![](images/mvnodeservice.png)
+   
    ![](images/mvnodeservice2.png)
 
 6. move the service file to `/etc/systemd/system/` folder
+
    ![](images/mvnodeservice3.png)
+   
 
 7. Start and enable the node service.
 
