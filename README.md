@@ -1,4 +1,3 @@
-# 2420_assign2
 # ACIT 2420 Linux Assignment 2
 
 Completed by Hao Li A01158483
