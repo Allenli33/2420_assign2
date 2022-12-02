@@ -32,15 +32,18 @@ Please watch all videos and finised setting up before you create the new user
 ## Step One
 
 1. Follow the second video and create VPC
+
    ![](images/VPC.png)
 
 2. Follow the second video and create load Balancer
+
    ![](images/Create-droplets.png)
    ![](images/vpc-droplets.png)
    ![](images/vpc-done.png)
    ![](images/load-balancer.png)
 
 3. Follow the second video and create Firewall
+
    ![](images/firewall1.png)
    ![](images/firewall2.png)
    ![](images/firewall3.png)
