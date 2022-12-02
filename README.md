@@ -1,6 +1,7 @@
 # ACIT 2420 Linux Assignment 2
 
 Completed by Hao Li A01158483
+> **note** load balancer IP : http://24.199.70.229/
 
 ## This README.MD guides how to do the following:
 
